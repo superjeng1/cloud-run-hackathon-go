@@ -48,8 +48,8 @@ func play(input ArenaUpdate) (response string) {
 	myState := extractMyState(input)
 	if myState.WasHit {
 		log.Println("someone is hitting me")
-		commands := []string{"F", "R", "L"}
-		rand := rand2.Intn(3)
+		commands := []string{"F", "F", "R", "L"}
+		rand := rand2.Intn(4)
 		return commands[rand]
 	}
 	if someoneIsInFrontOfMe(myState, board) {
