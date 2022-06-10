@@ -46,7 +46,7 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 	board := generateBoard(input)
 	myState := extractMyState(input)
-	if myState.wasHit {
+	if myState.WasHit {
 		log.Println("someone is hitting me")
 		commands := []string{"F", "R", "L"}
 		rand := rand2.Intn(3)
