@@ -46,6 +46,12 @@ func play(input ArenaUpdate) (response string) {
 	log.Printf("IN: %#v", input)
 	board := generateBoard(input)
 	myState := extractMyState(input)
+	if myState.wasHit == true {
+		log.Println("someone is hitting me")
+		commands := []string{"F", "R", "L"}
+		rand := rand2.Intn(3)
+		return commands[rand]
+	}
 	if someoneIsInFrontOfMe(myState, board) {
 		log.Println("throwing because someone is in front of me")
 		return "T"
